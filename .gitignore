@@ -1,0 +1,5 @@
+
+# Playwright
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
