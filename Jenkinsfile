@@ -20,13 +20,13 @@ pipeline {
 
         stage('Install Playwright Browsers') {
             steps {
-                sh 'npx playwright install'
+                sh 'node ./node_modules/@playwright/test/cli.js install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npx playwright test'
+                sh 'node ./node_modules/@playwright/test/cli.js install'
             }
         }
     }
