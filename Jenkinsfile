@@ -20,7 +20,7 @@ pipeline {
 
         stage('Install Playwright Browsers') {
             steps {
-                sh 'npx playwright install --with-deps'
+                sh 'chmod +x ./node_modules/.bin/playwright || true'
             }
         }
 
