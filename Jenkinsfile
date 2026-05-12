@@ -26,7 +26,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'npx playwright test'
+                sh 'node ./node_modules/@playwright/test/cli.js test'
             }
         }
     }
