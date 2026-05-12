@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/playwright:v1.54.1-jammy'
-        }
-    }
+    agent any
 
     tools {
         nodejs 'NodeJS-18'
@@ -22,9 +18,18 @@ pipeline {
             }
         }
 
+        stage('Install Linux Dependencies') {
+            steps {
+                sh '''
+                apt-get update
+                npx playwright install-deps
+                '''
+            }
+        }
+
         stage('Install Playwright Browsers') {
             steps {
-                sh 'chmod +x ./node_modules/.bin/playwright || true'
+                sh 'node ./node_modules/@playwright/test/cli.js install'
             }
         }
 
