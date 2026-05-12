@@ -546,7 +546,7 @@ test("Seats", async ({ page }) => {
 });
 
 
-test.only("Seats sort", async ({ page }) => {
+test("Seats sort", async ({ page }) => {
     await page.goto('https://www.tpilet.ee/en/');
 
     const cookieBtn = page.getByRole('button', { name: 'I agree' });

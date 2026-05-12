@@ -276,7 +276,7 @@ test('Delete', async ({ page }) => {
 });
 
 
-test.only('Place order', async ({ page }) => {
+test('Place order', async ({ page }) => {
     await page.goto('https://demoblaze.com/index.html');
     await page.waitForSelector(".card-title a");
     const firstProduct = page.locator(".card-title a").first();

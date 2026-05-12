@@ -539,7 +539,7 @@ test("Hotel Info", async ({ page, context }) => {
 });
 
 
-test.only("Checkbox", async ({ page, context }) => {
+test("Checkbox", async ({ page, context }) => {
     test.setTimeout(60000);
 
 
