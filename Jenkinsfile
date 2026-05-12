@@ -19,13 +19,12 @@ pipeline {
         }
 
         stage('Install Linux Dependencies') {
-            steps {
-                sh '''
-                apt-get update
-                npx playwright install-deps
-                '''
-            }
-        }
+    steps {
+        sh 'chmod -R +x ./node_modules/.bin/'
+        
+        sh 'npx playwright install-deps'
+    }
+}
 
         stage('Install Playwright Browsers') {
             steps {
