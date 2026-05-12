@@ -3,3 +3,7 @@
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+/tests/1.spec.js
+/tests/2.spec.js
+/tests/3.spec.js
+/tests/4.spec.js
