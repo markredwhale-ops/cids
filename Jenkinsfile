@@ -33,15 +33,16 @@ pipeline {
         }
 
         stage('Run Tests') {
-            steps {
-                sh 'node ./node_modules/@playwright/test/cli.js test'
-            }
-        }
+    steps {
+        sh 'node ./node_modules/@playwright/test/cli.js test --reporter=html'
+    }
+}
     }
 
     post {
-        always {
-            cleanWs()
-        }
+    always {
+        archiveArtifacts artifacts: 'playwright-report/**, test-results/**', allowEmptyArchive: true
+        cleanWs()
     }
+}
 }
